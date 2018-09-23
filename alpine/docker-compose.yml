@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  master:
+    image: mpolatcan/hivemall:alpine-0.5.0-hive-3.0.0-hadoop-3.1.1
+    container_name: master
+    hostname: master
+    environment:
+      - HADOOP_NODE_TYPE=namenode
+      - DFS_REPLICATION=2
+    ports:
+      - 50070:50070
+      - 3000:8088
+
+  slave:
+    image: mpolatcan/hadoop:alpine-3.1.1
+    environment:
+      - HADOOP_NODE_TYPE=datanode
+      - FS_HOSTNAME=master
+      - YARN_RM_HOSTNAME=master
+      - DFS_REPLICATION=2
+    links:
+      - master
