@@ -18,5 +18,4 @@ RUN mkdir /usr/local/hivemall && \
     echo "add jar ${HIVEMALL_HOME}/hivemall-all-${HIVEMALL_VERSION}-incubating.jar;" >> /home/hduser/.hiverc && \
     echo "source ${HIVEMALL_HOME}/define-all.hive;" >> /home/hduser/.hiverc
 
-ENTRYPOINT ["./hive_entrypoint.sh"]
-CMD ["tail","-f","/dev/null"]
+ENTRYPOINT ["./hive_entrypoint.sh","hive"]
