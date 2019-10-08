@@ -1,7 +1,8 @@
 ARG HIVE_VERSION=3.0.0
 ARG HADOOP_VERSION=3.1.1
+ARG JAVA_VERSION=8
 
-FROM mpolatcan/hive:ubuntu-${HIVE_VERSION}-hadoop-${HADOOP_VERSION}
+FROM mpolatcan/hive:${HIVE_VERSION}-hadoop-${HADOOP_VERSION}-java${JAVA_VERSION}
 
 MAINTAINER Mutlu Polatcan <mutlupolatcan@gmail.com>
 
