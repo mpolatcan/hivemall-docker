@@ -8,9 +8,9 @@ MAINTAINER Mutlu Polatcan <mutlupolatcan@gmail.com>
 
 ARG HIVEMALL_VERSION=0.5.0
 
-ENV HIVEMALL_HOME "/usr/local/hivemall"
+ENV HIVEMALL_HOME "${HDUSER_HOME}/hivemall"
 
-RUN mkdir /usr/local/hivemall && \
+RUN mkdir ${HIVEMALL_HOME} && \
     touch /home/hduser/.hiverc && \
     wget https://search.maven.org/remotecontent?filepath=org/apache/hivemall/hivemall-all/${HIVEMALL_VERSION}-incubating/hivemall-all-${HIVEMALL_VERSION}-incubating.jar && \
     wget https://raw.githubusercontent.com/apache/incubator-hivemall/v${HIVEMALL_VERSION}/resources/ddl/define-all.hive && \
