@@ -21,7 +21,6 @@ HADOOP_VERSIONS=(
 
 JAVA_VERSIONS=(
     "8"
-    "11"
 )
 
 # $1: HIVEMALL_VERSION
